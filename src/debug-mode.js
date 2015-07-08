@@ -18,9 +18,9 @@ wrap(View, 'prototype.emit')
 
         if (sourceAction && (source != target)) {
             let sourceEvent = sourceAction.split('#')[1];
-            console.log(`%c ${source} %c ${pad(sourceEvent, 25)} %c-> %c ${target} %c ${pad(targetEvent, 25)}`, 'background:#6E6E6E;color:#fff;', 'background:none;color:#6E6E6E;', 'color:#0097A9;', 'background:#F58000;color:#fff;','background:none;color:rgb(20,122,0);', data);
+            console.log(`%c ${source} %c ${pad(sourceEvent, 30+(11-source.length))} %c-> %c ${target} %c ${pad(targetEvent, 30+(11-target.length))}`, 'background:#6E6E6E;color:#fff;', 'background:none;color:#6E6E6E;', 'color:#0097A9;', 'background:#F58000;color:#fff;','background:none;color:rgb(20,122,0);', data);
         } else {
-            console.log(`%c ${target} %c ${pad(targetEvent, 25)}`, 'background:#F58000;color:#fff;', 'background:none;color:rgb(20,122,0);', data);
+            console.log(`%c ${target} %c ${pad(targetEvent, 30+(11-target.length))}`, 'background:#F58000;color:#fff;', 'background:none;color:rgb(20,122,0);', data);
         }
     });
 
@@ -28,6 +28,6 @@ function pad(str, len) {
     if (str.length > len) {
         return str;
     } else {
-        return (str+"                                            ").slice(0,len);
+        return (str+"                                                            ").slice(0,len);
     }
 }
