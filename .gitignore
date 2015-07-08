@@ -82,7 +82,3 @@ src/static/eom/css/orangemoneyprint.css
 dist
 
 jspm_packages
-app.css
-app.js
-app.js.map
-/.project
