@@ -1,15 +1,30 @@
 <!doctype html>
 <head>
-    <title>Login</title>
+    <title>Baobab Virtual Dom POC</title>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
 </head>
 <body>
+
+<style type="text/css">
+    body {
+        font-family: Roboto;
+    }
+
+    div.hidden {
+        display: none;
+    }
+
+    button.pressed {
+        border-style: inset;
+    }
+</style>
+
+<div id="app"></div>
+
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 <script>
-    System.import('reflect-metadata').then(function () {
-        System.import('src/app');
-    });
+    System.import('src/app');
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -57,7 +57,10 @@ View.prototype.render = function (tree, options) {
     var patches = this.tree && diff(this.tree, tree);
     if (!this.root) {
         this.root = createElement(tree);
-        this.emit(CREATED, this.root);
+        this.emit(CREATED, {
+            target: this.namespace,
+            targetEvent: CREATED
+        }, this.namespace, this.root);
     } else {
         if (options.patch === false && this.root.parentNode) {
             var newRoot = createElement(tree);

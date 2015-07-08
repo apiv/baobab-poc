@@ -1,11 +1,16 @@
-import View from 'lib/view/';
+import { View } from 'lib/view/';
+import AttributeHook from 'virtual-dom/virtual-hyperscript/hooks/attribute-hook';
 
+import { wrapEvent } from 'lib/events/';
+import h from 'virtual-dom/h';
 import {
     HELLO_WORLD,
     UI,
     CLOSE,
+    RESET,
+    CHANGE,
     ACTIVE
-    } from 'app/constants'
+    } from 'app/constants/'
 
 /**
  * @param {Baobab.Facet} viewFacet
@@ -15,15 +20,26 @@ export default function helloWorldView(viewFacet) {
     var view = new View(HELLO_WORLD);
 
     viewFacet.on('update', function () {
-        let { viewCursor } = viewFacet.get();
+        var { viewCursor } = viewFacet.get();
 
         view.render(
             h('div', {
-                'class': viewCursor[ACTIVE] ? '' : 'hidden'
+                'class': new AttributeHook(null, viewCursor[ACTIVE] ? '' : 'hidden')
             }, [
+                h('input', {
+                    id: 'message',
+                    type: 'text',
+                    value: viewCursor.message,
+                    'ev-keyup': wrapEvent(view, [UI, CHANGE], HELLO_WORLD)
+                }),
+                h('br'),
                 h('span', [viewCursor.message]),
+                h('br'),
                 h('button', {
-                    'ev-click': view.emit(view.formatEvent([UI, CLOSE]))
+                    'ev-click': wrapEvent(view, [UI, RESET], HELLO_WORLD)
+                }, ['Reset']),
+                h('button', {
+                    'ev-click': wrapEvent(view, [UI, CLOSE], HELLO_WORLD)
                 }, ['Close'])
             ])
         );
