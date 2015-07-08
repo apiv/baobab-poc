@@ -23,15 +23,9 @@ System.config({
     "core-js": "npm:core-js@0.9.18",
     "dom-delegator": "npm:dom-delegator@13.1.0",
     "events": "npm:events@1.0.2",
-    "is-primitive": "github:Voya-Financial/is-primitive@0.1.0",
-    "mediator": "github:Voya-Financial/mediator@0.1.1",
     "perfget": "npm:perfget@0.2.1",
     "util": "npm:util@0.10.3",
     "virtual-dom": "npm:virtual-dom@2.0.1",
-    "github:Voya-Financial/mediator@0.1.1": {
-      "Gozala/events": "github:Gozala/events@1.0.2",
-      "util": "github:jspm/nodelibs-util@0.1.0"
-    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },

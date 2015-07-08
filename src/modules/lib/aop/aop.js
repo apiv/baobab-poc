@@ -1,7 +1,7 @@
 import perfget from 'perfget';
 import util from 'util';
 import events from 'events';
-import { isPrimitive } from 'is-primitive';
+import { isPrimitive } from 'lib/is-primitive/';
 
 var DOT = '.';
 
