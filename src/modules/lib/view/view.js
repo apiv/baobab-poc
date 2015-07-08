@@ -58,6 +58,7 @@ View.prototype.render = function (tree, options) {
     if (!this.root) {
         this.root = createElement(tree);
         this.emit(CREATED, {
+            source: this.namespace,
             target: this.namespace,
             targetEvent: CREATED
         }, this.namespace, this.root);
