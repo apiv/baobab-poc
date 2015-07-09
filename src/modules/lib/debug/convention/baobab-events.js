@@ -8,7 +8,9 @@ var standardEvents = [
     'get',
     'select',
     'irrelevant',
-    'relevant'
+    'relevant',
+    'save',
+    'reset'
 ];
 
 wrap(Baobab.Cursor, 'prototype.emit')

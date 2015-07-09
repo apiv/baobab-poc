@@ -8,3 +8,7 @@ import 'lib/debug/convention/events';
 /** Debug -- expose appTree */
 import appTree from 'app/app-tree/';
 window.appTree = appTree;
+
+/** Debug -- expose Baobab */
+import Baobab from 'baobab';
+window.Baobab = Baobab;

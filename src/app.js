@@ -1,12 +1,7 @@
 import appTree from 'app/app-tree/';
 
-import helloWorldFacet from 'app/hello-world/hello-world-facet';
-import helloWorldView from 'app/hello-world/hello-world-view';
-import helloWorldInteractions from 'app/hello-world/hello-world-interactions';
-
-import commandBarFacet from 'app/command-bar/command-bar-facet';
-import commandBarView from 'app/command-bar/command-bar-view';
-import commandBarInteractions from 'app/command-bar/command-bar-interactions';
+import commandBar from 'app/command-bar/';
+import helloWorld from 'app/hello-world/';
 
 import { Mediator } from 'lib/mediator/';
 import DOMDelegator from 'dom-delegator';
@@ -20,8 +15,8 @@ function bootstrap(container) {
     var mediator = new Mediator;
 
     mediator
-        .addComponent(helloWorldInteractions(helloWorldView(helloWorldFacet(appTree))))
-        .addComponent(commandBarInteractions(commandBarView(commandBarFacet(appTree))))
+        .addComponent(helloWorld(appTree))
+        .addComponent(commandBar(appTree))
         .addHandlers();
 
     Object.keys(mediator.components).forEach(function (key) {

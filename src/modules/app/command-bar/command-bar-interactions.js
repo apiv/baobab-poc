@@ -9,11 +9,11 @@ import {
     CLICK,
     PRESSED,
     } from 'app/constants/';
-import appTree from 'app/app-tree/';
 import { spawnEvent } from 'lib/events/';
 
-var cursor = appTree.select(COMMAND_BAR);
-export default function commandBarInteractions(view) {
+export default function commandBarInteractions(view, appTree) {
+    var cursor = appTree.select(COMMAND_BAR);
+
     view.on(view.formatEvent([UI, CLICK]), click);
 
     view.on(view.formatEvent([UI, CLOSE]), close);

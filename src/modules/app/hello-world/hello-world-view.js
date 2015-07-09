@@ -9,7 +9,8 @@ import {
     CLOSE,
     RESET,
     CHANGE,
-    ACTIVE
+    ACTIVE,
+    SAVE
     } from 'app/constants/'
 
 /**
@@ -32,6 +33,9 @@ export default function helloWorldView(viewFacet) {
                     value: viewCursor.message,
                     'ev-keyup': wrapEvent(view, [UI, CHANGE], HELLO_WORLD)
                 }),
+                h('button', {
+                    'ev-click': wrapEvent(view, [UI, SAVE], HELLO_WORLD)
+                }, ['Save']),
                 h('br'),
                 h('span', [viewCursor.message]),
                 h('br'),
