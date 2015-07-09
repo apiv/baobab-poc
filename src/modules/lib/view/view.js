@@ -9,6 +9,9 @@ import createElement from 'virtual-dom/create-element';
 import diff from 'virtual-dom/diff';
 import patch from 'virtual-dom/patch';
 
+import DOMDelegator from 'dom-delegator';
+new DOMDelegator();
+
 /**
  * A node in the DOM tree.
  *
