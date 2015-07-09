@@ -1,4 +1,4 @@
-**NOTE** This project is a working draft of a Boabab app framework. This is still a bit rough around the edges.
+**NOTE** This project is a working draft of a Baobab app framework. This is still a bit rough around the edges.
 
 **NOTE** This README is also a work in progress. I've only written a little bit, and i'm still organizing my thoughts.
 
