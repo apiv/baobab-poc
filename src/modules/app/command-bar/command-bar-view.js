@@ -7,7 +7,8 @@ import {
     PRESSED,
     COMMAND_BAR,
     CLICK,
-    UI
+    UI,
+    UPDATE
     } from 'app/constants/'
 
 /**
@@ -17,7 +18,7 @@ import {
 export default function commandBarView(viewFacet) {
     var view = new View(COMMAND_BAR);
 
-    viewFacet.on('update', function () {
+    viewFacet.on(UPDATE, function () {
         var { viewCursor, buttons } = viewFacet.get();
 
         view.render(

@@ -3,7 +3,7 @@ import {
     HELLO_WORLD,
     UI,
     OPEN,
-    RESET,
+    REVERT,
     CHANGE,
     CLOSE,
     CLICK,

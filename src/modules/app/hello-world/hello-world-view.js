@@ -7,10 +7,11 @@ import {
     HELLO_WORLD,
     UI,
     CLOSE,
-    RESET,
+    REVERT,
     CHANGE,
     ACTIVE,
-    SAVE
+    SAVE,
+    UPDATE
     } from 'app/constants/'
 
 /**
@@ -20,7 +21,7 @@ import {
 export default function helloWorldView(viewFacet) {
     var view = new View(HELLO_WORLD);
 
-    viewFacet.on('update', function () {
+    viewFacet.on(UPDATE, function () {
         var { viewCursor } = viewFacet.get();
 
         view.render(
@@ -40,7 +41,7 @@ export default function helloWorldView(viewFacet) {
                 h('span', [viewCursor.message]),
                 h('br'),
                 h('button', {
-                    'ev-click': wrapEvent(view, [UI, RESET], HELLO_WORLD)
+                    'ev-click': wrapEvent(view, [UI, REVERT], HELLO_WORLD)
                 }, ['Reset']),
                 h('button', {
                     'ev-click': wrapEvent(view, [UI, CLOSE], HELLO_WORLD)

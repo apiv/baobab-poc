@@ -1,7 +1,21 @@
 import Baobab from 'baobab';
 import {
-    HELLO_WORLD
+    HELLO_WORLD,
+    RELEVANT,
+    SAVE,
+    REVERT
     } from 'app/constants/';
+
+import {
+    requestService,
+    saveService,
+    revertService
+    } from './hello-world-service';
+
+var defaults = {
+    active: false,
+    message: ''
+};
 
 /**
  * @param {Baobab} tree
@@ -15,7 +29,11 @@ export default function helloWorldFacet(tree) {
         facets: {}
     });
 
-    tree.set(HELLO_WORLD, {});
+    viewCursor.on(RELEVANT, ()=> requestService(viewCursor));
+    viewCursor.on(SAVE, ()=> saveService(viewCursor));
+    viewCursor.on(REVERT, ()=> revertService(viewCursor));
+
+    viewCursor.set(defaults);
 
     return viewFacet;
 }
